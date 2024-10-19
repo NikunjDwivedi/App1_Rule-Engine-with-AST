@@ -1,7 +1,7 @@
 # App1_Rule-Engine-with-AST
 Zeotap assessment Application 1: simple 3-tier rule engine application(Simple UI, API and Backend, Data) to determine user eligibility based on attributes like age, department, income, spend etc. System uses Abstract Syntax Tree (AST) to represent conditional rules and allow for dynamic creation,combination, and modification of these rules.
 
-# Hosted link: https://app1-rule-engine-with-ast.onrender.com/
+## Hosted link: https://app1-rule-engine-with-ast.onrender.com/
 
 ## Overview
 
