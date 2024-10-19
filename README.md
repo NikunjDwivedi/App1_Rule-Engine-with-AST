@@ -1,7 +1,6 @@
 # App1_Rule-Engine-with-AST
 Zeotap assessment Application 1: simple 3-tier rule engine application(Simple UI, API and Backend, Data) to determine user eligibility based on attributes like age, department, income, spend etc. System uses Abstract Syntax Tree (AST) to represent conditional rules and allow for dynamic creation,combination, and modification of these rules.
 
-# Rule Engine Application
 Hosted link: https://app1-rule-engine-with-ast.onrender.com/
 
 ## Overview
@@ -13,27 +12,27 @@ This application is a rule engine that determines user eligibility based on attr
 
 ## Features
 
-- *Create Rules:* Define rules using a string format that gets converted into an AST.
+- **Create Rules:** Define rules using a string format that gets converted into an AST.
   
   <img width="377" alt="image" src="https://github.com/user-attachments/assets/0ffe41aa-7f9c-4fe1-9230-2091bbb16632">
 
 
-- *Combine Rules:* Combine multiple rules into a single AST for more complex evaluations.
+- **Combine Rules:** Combine multiple rules into a single AST for more complex evaluations.
   
   <img width="376" alt="image" src="https://github.com/user-attachments/assets/63145818-6936-4763-8fbe-db65f264e4ff">
 
   
-- *Evaluate Rules:* Check if the given data meets the criteria defined by the AST.
+- **Evaluate Rules:** Check if the given data meets the criteria defined by the AST.
   
   <img width="375" alt="image" src="https://github.com/user-attachments/assets/041e664f-1711-4bbb-b107-50d5fb7909f4">
 
 
-- *Tree Visualization:* Define or Combine Rule would should show Tree Representation.
+- **Tree Visualization:** Define or Combine Rule would should show Tree Representation.
 
 ## Tech Stack
 
-- *Backend:* Node.js, Express.js
-- *Database:* MongoDB
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB
 
 ## Getting Started
 
@@ -44,88 +43,88 @@ This application is a rule engine that determines user eligibility based on attr
 
 ### Installation
 
-1. *Clone the Repository*
-   bash
+1. **Clone the Repository**
+   ```bash
    git clone "https://github.com/Santosh-2003-sahoo/App1-Rule-Engine-with-AST.git"
    cd rule-engine
-   
+   ```
 
-2. *Install Backend Dependencies*
+2. **Install Backend Dependencies**
 
-   bash
+   ```bash
    npm install
+   ```
    
-   
-3. *Start MongoDB*
+3. **Start MongoDB**
 
    Ensure that MongoDB is running on your local machine:
 
-   bash
+   ```bash
    mongod
-   
+   ```
 
-4. *Start the Backend Server*
+4. **Start the Backend Server**
 
-   bash
+   ```bash
    nodemon server.js
-   
+   ```
 
 ## API Endpoints
 
-1. *Create a Rule*
-   - *Endpoint:* /api/create_rule
-   - *Method:* POST
-   - *Body:*
+1. **Create a Rule**
+   - **Endpoint:** `/api/create_rule`
+   - **Method:** POST
+   - **Body:**
 
-     json
+     ```json
      {
        "ruleString": "((age > 30 AND department = 'Sales') OR (age < 25 AND department = 'Marketing')) AND (salary > 50000 OR experience > 5)",
        "ruleName": "Rule 1"
      }
-     
+     ```
 use appropriate spaces in Rules for correct results.
 
 Rule should be in follow format:
 variable operator value 
 
-   - *Response:*
+   - **Response:**
 
-     json
+     ```json
      {
        "_id": "605c72ef1f4e3a001f4d2e9a",
        "rule_name": "Rule1",
        "rule_ast": { ... }
      }
-     
+     ```
 
-2. *Combine Rules*
-   - *Endpoint:* /api/rules/combine_rules
-   - *Method:* POST
-   - *Body:*
+2. **Combine Rules**
+   - **Endpoint:** `/api/rules/combine_rules`
+   - **Method:** POST
+   - **Body:**
 
-     json
+     ```json
      {
        "ruleIds": ["605c72ef1f4e3a001f4d2e9a", "605c730f1f4e3a001f4d2e9b"]
        "operators: op
      }
-     
-   - *Response:*
+     ```
+   - **Response:**
 
-     json
+     ```json
      {
        "type": "operator",
        "value": operator,
        "left": { ... },
        "right": { ... }
      }
-     
+     ```
 
-3. *Evaluate a Rule*
-   - *Endpoint:* /api/rules/evaluate_rule
-   - *Method:* POST
-   - *Body:*
+3. **Evaluate a Rule**
+   - **Endpoint:** `/api/rules/evaluate_rule`
+   - **Method:** POST
+   - **Body:**
 
-     json
+     ```json
      {
        "rule": { ... },
        "data": {
@@ -135,14 +134,14 @@ variable operator value
          "experience": 3
        }
      }
-     
-   - *Response:*
+     ```
+   - **Response:**
 
-     json
+     ```json
      {
        "result": true
      }
-     
+     ```
 
 ## Running Tests
 
